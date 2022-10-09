@@ -75,7 +75,7 @@ LPromise.prototype.then = function (onFulfilled, onRejected) {
 		return (promise2 = new LPromise((resolve, reject) => {
 			this.onFulfilledArray.push(() => {
 				try {
-					let result = this.onFulfilled(this.value);
+					let result = onFulfilled(this.value);
 					resolve(result);
 				} catch (e) {
 					reject(e);
